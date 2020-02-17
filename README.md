@@ -3,6 +3,7 @@ MLEssential is a computational toolbox to predict essential genes using machine 
 
 ## Dependencies
 * Python==3.7.4
+* biopython==1.75
 * scikit-learn==0.22.1
 * numpy==1.17.2
 * scipy==1.3.1
