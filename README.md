@@ -9,3 +9,6 @@ MLEssential is a computational toolbox to predict essential genes using machine 
 * scipy==1.3.1
 * pandas==0.25.1
 * seaborn==0.9.0
+
+## Schematic workflow for gene essentiality prediction using machine learning methods
+![image](https://github.com/SysBioChalmers/MLEssential/blob/master/figure/Picture_protein_complex.png)
