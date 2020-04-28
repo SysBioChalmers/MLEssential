@@ -1,5 +1,5 @@
 # ML_ProteinFunc
-ML_ProteinFunc is a computational toolbox to predict protein function using machine learning based on multi-scale information
+ML_ProteinFunc is a computational toolbox to predict protein functions using machine learning based on multi-scale information
 
 ## Dependencies
 * Python==3.7.4
