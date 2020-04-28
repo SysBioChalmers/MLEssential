@@ -1,5 +1,5 @@
-# MLEssential
-MLEssential is a computational toolbox to predict essential genes using machine learning based on multi-scale information
+# ML_ProteinFunc
+ML_ProteinFunc is a computational toolbox to predict protein function using machine learning based on multi-scale information
 
 ## Dependencies
 * Python==3.7.4
@@ -10,5 +10,5 @@ MLEssential is a computational toolbox to predict essential genes using machine 
 * pandas==0.25.1
 * seaborn==0.9.0
 
-## Schematic workflow for gene essentiality prediction using machine learning methods
+## Schematic workflow for protein function prediction using machine learning methods
 ![image](https://github.com/SysBioChalmers/MLEssential/blob/master/figure/workflow.png)
