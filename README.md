@@ -14,7 +14,7 @@ ML_ProteinFunc is a computational toolbox to predict protein functions using mac
 ![image](https://github.com/SysBioChalmers/MLEssential/blob/master/figure/workflow.png)
 
 ## Contributors
-* [Le Yuan](https://www.chalmers.se/en/Staff/Pages/leyu.aspx) ([@hongzhonglu](https://github.com/le-yuan)), Chalmers University of Technology, Sweden
+* [Le Yuan](https://www.chalmers.se/en/Staff/Pages/leyu.aspx) ([@leyuan](https://github.com/le-yuan)), Chalmers University of Technology, Sweden
 * [Hongzhong Lu](https://www.chalmers.se/en/Staff/Pages/luho.aspx) ([@hongzhonglu](https://github.com/hongzhonglu)), Chalmers University of Technology, Sweden
 * [Feiran Li](https://www.chalmers.se/en/staff/Pages/feiranl.aspx) ([@feiranl](https://github.com/feiranl)), Chalmers University of Technology, Sweden
 * [Eduard J. Kerkhoven](https://www.chalmers.se/en/staff/Pages/Eduard-Kerkhoven.aspx) ([@edkerk](https://github.com/edkerk)), Chalmers University of Technology, Sweden
