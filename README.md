@@ -1,5 +1,5 @@
 # MLEssential
-MLEssential is a computational toolbox to predict protein functions using machine learning based on multi-scale information
+MLEssential is a computational toolbox to predict essential genes for yeast species using machine learning based on multi-scale information, including sequence features and evolution-based features.
 
 ## Dependencies
 * Python==3.7.4
