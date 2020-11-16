@@ -43,8 +43,8 @@ def plot_roc_cv(data, out, label_column=0, score_column=2):
     for i, color in zip(range(len(fprArray)), colors):
         plt.plot(fprArray[i], tprArray[i], lw=1, alpha=0.7, color=color,
                  label='ROC fold %d (AUC = %0.2f)' % (i + 1, aucs[i]))
-    plt.plot([0, 1], [0, 1], linestyle='--', lw=2, color='r',
-             label='Random', alpha=.8)
+    # plt.plot([0, 1], [0, 1], linestyle='--', lw=2, color='r',
+    #          label='Random', alpha=.8)
     mean_tpr = np.mean(tprs, axis=0)
     mean_tpr[-1] = 1.0
     mean_auc = auc(mean_fpr, mean_tpr)
@@ -59,9 +59,11 @@ def plot_roc_cv(data, out, label_column=0, score_column=2):
                      label=r'$\pm$ 1 std. dev.')
     plt.xlim([0, 1.0])
     plt.ylim([0, 1.0])
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.legend(loc="lower right")
+    plt.xlabel('False Positive Rate', fontsize=18)
+    plt.ylabel('True Positive Rate', fontsize=18)
+    plt.xticks(fontsize=12)
+    plt.yticks(fontsize=12)
+    plt.legend(loc="lower right", prop={"size":12})
     plt.savefig(out, dpi=400)
     plt.close(0)
     return mean_auc
@@ -175,9 +177,11 @@ def plot_prc_CV(data, out, label_column=0, score_column=2):
                      label=r'$\pm$ 1 std. dev.')
     plt.xlim([0, 1.0])
     plt.ylim([0, 1.0])
-    plt.xlabel('Recall')
-    plt.ylabel('Precision')
-    plt.legend(loc="lower left")
+    plt.xlabel('Recall', fontsize=18)
+    plt.ylabel('Precision', fontsize=18)
+    plt.xticks(fontsize=12)
+    plt.yticks(fontsize=12)
+    plt.legend(loc="lower left", prop={"size":12})
     plt.savefig(out, dpi=400)
     plt.close(0)
     return mean_auc
@@ -211,8 +215,8 @@ def plot_mean_prc_CV(data_dict, out, label_column=0, score_column=2):
                  lw=2, alpha=.9)
     plt.xlim([0, 1.0])
     plt.ylim([0, 1.0])
-    plt.xlabel('Recall')
-    plt.ylabel('Precision')
+    plt.xlabel('Recall', fontsize=18)
+    plt.ylabel('Precision', fontsize=18)
     plt.legend(loc="lower left")
     plt.savefig(out, dpi=400)
     plt.close(0)
