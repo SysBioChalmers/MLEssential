@@ -4,7 +4,6 @@
 import argparse
 import math
 import numpy as np
-# from pubscripts import read_code_ml, save_file, draw_plot, calculate_prediction_metrics
 from sklearn import svm
 from sklearn.model_selection import StratifiedKFold, GridSearchCV
 
@@ -64,67 +63,4 @@ def SVM_Classifier(X, y, indep=None, fold=5, batch=None, auto=False, kernel='rbf
     if indep.shape[0] != 0:
         inds[:, 1:] /= fold
     return header, prediction_result_cv, inds
-
-'''
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(usage="it's usage tip.",
-                                     description="Training SVM model.")
-    parser.add_argument("--train", required=True, help="input training coding file")
-    parser.add_argument("--indep", help="independent coding file")
-    parser.add_argument("--format", choices=['tsv', 'svm', 'csv', 'weka'], default='tsv',
-                        help="input file format (default tab format)")
-    parser.add_argument("--kernel", choices=['linear', 'poly', 'rbf', 'sigmoid'], default='rbf',
-                        help="SVM kernel type (default rbf kernel)")
-    parser.add_argument("--auto", action='store_true', help="auto optimize parameters (defalult: False)")
-    parser.add_argument("--batch", type=float, default=1,
-                        help="random select part (batch * samples) samples for parameters optimization")
-    parser.add_argument("--degree", type=int, default=3, help="set degree in polynomial kernel function (default 3)")
-    parser.add_argument("--gamma", type=float, help="set gamma in polynomial/rbf/sigmoid kernel function (default 1/k)")
-    parser.add_argument("--coef0", type=float, default=0,
-                        help="set coef0 in polynomial/rbf/sigmoid kernel function (default 0)")
-    parser.add_argument("--cost", type=float, default=1, help="set the parameter cost value (default 1)")
-    parser.add_argument("--fold", type=int, default=5,
-                        help="n-fold cross validation mode (default 5-fold cross-validation, 1 means jack-knife cross-validation)")
-    parser.add_argument("--out", default="SVM_output", help="set prefix for output score file")
-    args = parser.parse_args()
-    if args.gamma == None:
-        args.gamma = 'auto'
-
-    X, y, independent = 0, 0, np.array([])
-    X, y = read_code_ml.read_code(args.train, format='%s' % args.format)
-    if args.indep:
-        ind_X, ind_y = read_code_ml.read_code(args.indep, format='%s' % args.format)
-        independent = np.zeros((ind_X.shape[0], ind_X.shape[1] + 1))
-        independent[:, 0], independent[:, 1:] = ind_y, ind_X
-
-    para_info, cv_res, ind_res = SVM_Classifier(X, y, indep=independent, fold=args.fold, batch=args.batch,
-                                                       auto=args.auto, kernel=args.kernel, degree=args.degree,
-                                                       gamma=args.gamma, coef0=args.coef0, C=args.cost)
-
-
-    classes = sorted(list(set(y)))
-    if len(classes) == 2:
-        save_file.save_CV_result_binary(cv_res, '%s_CV.txt' % args.out, para_info)
-        mean_auc = draw_plot.plot_roc_cv(cv_res, '%s_ROC_CV.png' % args.out, label_column=0, score_column=2)
-        mean_auprc = draw_plot.plot_prc_CV(cv_res, '%s_PRC_CV.png' % args.out, label_column=0, score_column=2)
-        cv_metrics = calculate_prediction_metrics.calculate_metrics_cv(cv_res, label_column=0, score_column=2,)
-        save_file.save_prediction_metrics_cv(cv_metrics, '%s_metrics_CV.txt' % args.out)
-
-        if args.indep:
-            save_file.save_IND_result_binary(ind_res, '%s_IND.txt' % args.out, para_info)
-            ind_auc = draw_plot.plot_roc_ind(ind_res, '%s_ROC_IND.png' % args.out, label_column=0, score_column=2)
-            ind_auprc = draw_plot.plot_prc_ind(ind_res, '%s_PRC_IND.png' % args.out, label_column=0, score_column=2)
-            ind_metrics = calculate_prediction_metrics.calculate_metrics(ind_res[:, 0], ind_res[:, 2])
-            save_file.save_prediction_metrics_ind(ind_metrics, '%s_metrics_IND.txt' %args.out)
-    if len(classes) > 2:
-        save_file.save_CV_result(cv_res, classes, '%s_CV.txt' % args.out, para_info)
-        cv_metrics = calculate_prediction_metrics.calculate_metrics_cv_muti(cv_res, classes, label_column=0)
-        save_file.save_prediction_metrics_cv_muti(cv_metrics, classes, '%s_metrics_CV.txt' % args.out)
-
-        if args.indep:
-            save_file.save_IND_result(ind_res, classes, '%s_IND.txt' % args.out, para_info)
-            ind_metrics = calculate_prediction_metrics.calculate_metrics_ind_muti(ind_res, classes, label_column=0)
-            save_file.save_prediction_metrics_ind_muti(ind_metrics, classes, '%s_metrics_IND.txt' % args.out)
-'''
-
 
