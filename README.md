@@ -13,6 +13,10 @@ MLEssential is a computational toolbox to predict essential genes for yeast spec
 ## Schematic workflow for gene essentiality prediction using machine learning methods
 ![image](https://github.com/SysBioChalmers/MLEssential/blob/master/figure/workflow.png)
 
+## Citation
+Please cite this paper:
+Lu, H. et al. _Yeast metabolic innovations emerged via expanded metabolic network and gene positive selection._ Molecular Systems Biology 2021(17):e10427. https://www.embopress.org/doi/full/10.15252/msb.202110427.
+
 ## Contributors
 * [Le Yuan](https://www.chalmers.se/en/Staff/Pages/leyu.aspx) ([@leyuan](https://github.com/le-yuan)), Chalmers University of Technology, Sweden
 * [Hongzhong Lu](https://www.chalmers.se/en/Staff/Pages/luho.aspx) ([@hongzhonglu](https://github.com/hongzhonglu)), Chalmers University of Technology, Sweden
